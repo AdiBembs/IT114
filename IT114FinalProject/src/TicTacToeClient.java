@@ -71,7 +71,7 @@ public final class TicTacToeClient extends JFrame implements Runnable {
 
     public void clientConnection() {
         try {
-            connection = new Socket(InetAddress.getByName(TTTHost), 12345);
+            connection = new Socket(InetAddress.getByName(TTTHost), 54721);
 
             inputText = new Scanner(connection.getInputStream());
             outputText = new Formatter(connection.getOutputStream());
@@ -202,5 +202,31 @@ public final class TicTacToeClient extends JFrame implements Runnable {
             g.drawString(play, 11, 20);    
         }
     }
+    public static void main(String[] args) 
+    {
+    	/*TicTacToeClient client = new TicTacToeClient("127.0.0.1");
+//		int port = -1;
+//		try{
+//			//not safe but try-catch will get it
+//			port = Integer.parseInt(args[0]);
+//		}
+//		catch(Exception e){
+//			System.out.println("Invalid port");
+//		}
+//		if(port == -1){
+//			return;
+//		}
+		client.clientConnection();*/
+    	
+    	TicTacToeClient test; 
 
-}
+        if (args.length == 0) {
+            test = new TicTacToeClient("127.0.0.1"); 
+        } else {
+            test = new TicTacToeClient(args[0]); 
+        }
+
+        test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+ }
+

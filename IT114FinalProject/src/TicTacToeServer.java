@@ -48,7 +48,7 @@ public class TicTacToeServer extends JFrame {
         currentPlayerMove = playerX; 
 
         try {
-            server = new ServerSocket(12345, 2); 
+            server = new ServerSocket(54721, 2); 
         } catch (IOException ioException) {
             System.out.println(ioException.toString());
             System.exit(1);
@@ -244,5 +244,30 @@ public class TicTacToeServer extends JFrame {
             isSuspended = status; 
         }
     }
-
+    public static void main(String[] args) 
+    {
+    	/*System.out.println("Starting Server");
+		TicTacToeServer server = new TicTacToeServer();
+		//int port = -1;
+//		if(args.length > 0){
+//			try{
+//				port = Integer.parseInt(args[0]);
+//			}
+//			catch(Exception e){
+//				System.out.println("Invalid port: " + args[0]);
+//			}		
+//		}
+//		if(port > -1){
+//			System.out.println("Server listening on port " + port);
+//			server.execute();
+//		}
+		//System.out.println("Server Stopped");*/
+    	
+    	TicTacToeServer test = new TicTacToeServer();
+        test.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        test.execute();
+		
+	}
 }
+   
+
