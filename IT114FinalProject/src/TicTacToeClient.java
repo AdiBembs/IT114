@@ -44,7 +44,7 @@ public final class TicTacToeClient extends JFrame implements Runnable {
         add(new JScrollPane(outputArea), BorderLayout.SOUTH);
 
         boardPanel = new JPanel(); 
-        boardPanel.setLayout(new GridLayout(3, 3, 0, 0));
+        boardPanel.setLayout(new GridLayout(3, 3));
         gameBoard = new Square[3][3]; 
 
        
